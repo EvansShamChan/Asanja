@@ -30,4 +30,4 @@ HELP.md
 .vscode/
 
 ### Gradle Wrapper ###
-/.gradle/
+/gradle/
