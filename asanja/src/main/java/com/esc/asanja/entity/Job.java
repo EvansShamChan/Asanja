@@ -2,7 +2,6 @@ package com.esc.asanja.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -13,9 +12,6 @@ import javax.validation.constraints.Positive;
  */
 @Document(collection = "jobs")
 public class Job {
-
-    @Id
-    private Long id;
 
     @NotEmpty
     private String name;
@@ -30,14 +26,6 @@ public class Job {
     @NotNull
     @Max(value = 10)
     private Integer complexity;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

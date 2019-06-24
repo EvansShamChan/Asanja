@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service for manipulating job entity.
+ * */
 @Service
 public class JobService {
 
@@ -17,11 +20,29 @@ public class JobService {
         this.jobRepository= jobRepository;
     }
 
+    /**
+     * Method creates new job.
+     *
+     * @param newJob
+     *      - new job entity
+     * */
     public void createNewJob(Job newJob) {
         jobRepository.save(newJob);
     }
 
+    /**
+     * Method for retrieving all existing jobs.
+     *
+     * @return list of jobs
+     * */
     public List<Job> getAllJobs() {
         return jobRepository.findAll();
+    }
+
+    /**
+     * Method for deleting all existing jobs.
+     * */
+    public void deleteAllJobs() {
+        jobRepository.deleteAll();
     }
 }
