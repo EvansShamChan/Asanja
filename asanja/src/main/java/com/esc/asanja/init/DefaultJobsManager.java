@@ -4,7 +4,7 @@ import com.esc.asanja.entity.Job;
 import com.esc.asanja.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * Class for managing default jobs list.
  * */
-@Controller
+@Component
 public class DefaultJobsManager {
 
     @Value("#{'${app.jobs.default.list}'.split(', ')}")
