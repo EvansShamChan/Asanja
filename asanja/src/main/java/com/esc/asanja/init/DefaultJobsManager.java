@@ -38,12 +38,11 @@ public class DefaultJobsManager {
     }
 
     private Job createInitJob(String jobName) {
-        //todo: create builder for job entity
-        Job job = new Job();
-        job.setName(jobName);
-        job.setSecondsToAchieve(60L);
-        job.setComplexity(new Random().nextInt(10));
-        return job;
+        return new Job.Builder()
+                .name(jobName)
+                .secondsToArchieve(60L)
+                .complexity(new Random().nextInt(10))
+                .build();
     }
 
     /**

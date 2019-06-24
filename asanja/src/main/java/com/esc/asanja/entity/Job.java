@@ -27,6 +27,42 @@ public class Job {
     @Max(value = 10)
     private Integer complexity;
 
+    /**
+     * Builder for job entity.
+     * */
+    public static class Builder {
+
+        private Job job;
+        
+        public Builder() {
+            job = new Job();
+        }
+
+        public Builder name(String name) {
+            job.setName(name);
+            return this;
+        }
+
+        public Builder description(String description) {
+            job.setDescription(description);
+            return this;
+        }
+
+        public Builder complexity(Integer complexity) {
+            job.setComplexity(complexity);
+            return this;
+        }
+
+        public Builder secondsToArchieve(Long secondsToArchieve) {
+            job.setSecondsToAchieve(secondsToArchieve);
+            return this;
+        }
+
+        public Job build() {
+            return job;
+        }
+    }
+
     public String getName() {
         return name;
     }
