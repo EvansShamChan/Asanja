@@ -23,3 +23,8 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+bootJar {
+	//Set the exact jar name for building docker image
+	archiveFileName = 'asanja.jar'
+}
