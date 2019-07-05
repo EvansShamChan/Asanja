@@ -14,9 +14,15 @@ public class MongoDBConfig extends AbstractMongoConfiguration {
     @Value("${app.jobs.collection.name}")
     private String jobsCollectionName;
 
+    @Value("${app.mongo.host}")
+    private String mongoHost;
+
+    @Value("${app.mongo.port}")
+    private String mongoPort;
+
     @Override
     public MongoClient mongoClient() {
-        return new MongoClient("172.19.0.2", 27017);
+        return new MongoClient(mongoHost, Integer.valueOf(mongoPort));
     }
 
     @Override
